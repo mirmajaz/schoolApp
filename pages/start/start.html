@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Welcome</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-slides pager="true">
+ 
+        <ion-slide>
+          <img src="assets/imgs/school1.jpg" />
+        </ion-slide>
+       
+        <ion-slide>
+          <img src="assets/imgs/school2.jpg" />
+        </ion-slide>
+       
+        <ion-slide>
+          <img src="assets/imgs/school3.jpg" />
+        </ion-slide>
+       
+        <ion-slide>
+          <ion-row>
+            <ion-col>
+              <img src="assets/imgs/school4.png" />
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <button ion-button color="light" (click)="goToHome()">Start Adding your student</button>
+            </ion-col>
+          </ion-row>
+        </ion-slide>
+      </ion-slides>

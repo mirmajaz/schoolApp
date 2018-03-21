@@ -1,0 +1,30 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>{{loopVal}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+      <ion-item>
+        <ion-label>NickName</ion-label>
+       
+        <ion-select name="school" [(ngModel)]="student_nickName" #C (ionChange)="onChange($event)">
+          <!-- <ion-option value="1001" >1001</ion-option>
+          <ion-option value="1002">1002</ion-option>
+          <ion-option value="1002">1003</ion-option> -->
+          <ion-option  *ngFor="let c of b  let i = index" (ionSelect)="myIndex = i">{{name[c]}}</ion-option>
+        </ion-select>
+      </ion-item>   
+    </ion-list>
+
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

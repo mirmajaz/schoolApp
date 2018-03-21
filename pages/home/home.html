@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+ 
+  <form  #form ="ngForm" (ngSubmit)="logForm(form)">
+  <ion-list>
+      <ion-item>
+          <ion-label>School Name</ion-label>
+         
+          <ion-select name="school" [(ngModel)]="text" #C (ionChange)="onChange(C.value)">
+            <!-- <ion-option value="1001" >1001</ion-option>
+            <ion-option value="1002">1002</ion-option>
+            <ion-option value="1002">1003</ion-option> -->
+             <ion-option *ngFor = "let schools of loadSchools" value ={{schools.id}}{{dot}}{{schools.name}} >{{schools.name}}</ion-option>
+          </ion-select>
+        </ion-item>                 
+    <ion-item class="username">
+        <ion-label floating>Student id</ion-label>
+           <ion-input type="text" #id name="Student_id"  [(ngModel)]="student_id" maxlength = "15" ngModel class="form-control" ></ion-input>
+    </ion-item>
+
+    <ion-item class="username">
+       <ion-label floating>Password</ion-label>
+         <ion-input type="password" #password name="password"  [(ngModel)]="student_password" minlength="4" maxlength = "12" ngModel class="form-control" ></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Nick Name</ion-label>
+          <ion-input type="text" #nickName name= "student_nickName"  [(ngModel)]="student_nickName"minlength="4" maxlength = "15" ngModel class="form-control"></ion-input>
+  </ion-item>
+  </ion-list>
+
+  <div >
+    
+    <button type="submit" ion-button color="primary" block full >Register </button>
+  </div>         
+</form>
+
+    
+    </ion-content>

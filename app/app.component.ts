@@ -59,12 +59,9 @@ export class MyApp {
   this.rootPage = Start;
 }    
    else if(localStorage.getItem("pin")!=null){
-     if (window.location.reload) {
-      this.rootPage = Profilepage;
-     }
-     else{
+   
       this.rootPage = PasswordPage;
-        }
+      
     }
    else if(localStorage.getItem("student_id0")!=null) {
 this.rootPage = Profilepage;
